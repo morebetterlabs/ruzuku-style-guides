@@ -211,7 +211,72 @@ much require the use of `this` which is difficult to reason about in JS,
 especially when switching between languages with better class support
 (Ruby, C#, etc).
 
-## Folder structure/file names
+### Explicitly declare properties, unless using an object as a generic hash/map
+
+When programming, explicit is generally better than implicit for maintenance.
+
+```js
+// bad... who knows what shape a User object might be?
+function User(spec) {
+  const me = {
+    ...spec,
+    get fullName () {
+      return `${me.firstName} ${me.lastName}`
+    }
+  }
+
+  return me
+}
+
+// good... more typing up front, but much more understandable
+function User(spec) {
+  const me = {
+    id: spec.id,
+    firstName: spec.firstName,
+    lastName: spec.lastName,
+    age: spec.age,
+
+    get fullName () {
+      return `${me.firstName} ${me.lastName}`
+    },
+  }
+
+  return me
+}
+
+// best... eliminates two potential sources of typos (typing spec. and
+// referring to an undefined property (e.g. spec.firsName))
+function User({id, firstName, lastName, age}) {
+  const me = {
+    id,
+    firstName,
+    lastName,
+    age,
+
+    get fullName () {
+      return `${me.firstName} ${me.lastName}`
+    },
+  }
+
+  return me
+}
+
+```
+
+### Multi-file components should have their own folder
+
+When writing a complex, multi-file component, it should live in its own folder
+and expose its external interface via `index.js` or `index.jsx`. This file is
+the `main` entry point for the component. Outside scripts should never refer
+to anything other than that which is exposed from `index`.
+
+```js
+// bad
+import {Foo} from '../some-component/foo'
+
+// good (this is shorthand for '../some-component/index')
+import {foo} from '../some-component'
+```
 
 ## JSX
 
