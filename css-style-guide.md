@@ -80,6 +80,27 @@ An example for a `user-widget`:
 
 ```
 
+## Each UI component should get its own `scss` file.
+
+While this does lead to a lot of files, finding a rule should be as
+straightforward as `Cmd+T` and typing the name of the UI component.
+
+```scss
+// This would be in _user-widget.scss
+.user-widget {
+  background: #F5F5F5;
+  padding: 1em;
+}
+  .user-widget__pic {
+    float: left;
+  }
+
+  .user-widget__name {
+    opacity: 0.5;
+    display: block;
+  }
+```
+
 ### Use SCSS' `&` feature sparingly
 
 We want our SCSS to be as searchable as possible. If I see class `user-name` in
