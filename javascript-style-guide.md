@@ -211,9 +211,12 @@ much require the use of `this` which is difficult to reason about in JS,
 especially when switching between languages with better class support
 (Ruby, C#, etc).
 
-### Explicitly declare properties, unless using an object as a generic hash/map
+### Explicitly define fields, unless using an object as a generic hash/map
 
 When programming, explicit is generally better than implicit for maintenance.
+Explicitly defining an object's fields makes the object definition much clearer.
+It also is a step towards static typing via TypeScript/Flow which we may
+incorporate in the future. 
 
 ```js
 // bad... who knows what shape a User object might be?
