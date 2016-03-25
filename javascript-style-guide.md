@@ -23,6 +23,25 @@ semicolon bugs) should not be an issue.
 
 The following rule is a corollary.
 
+### Don't use trailing commas
+
+Trailing commas are better for diffs, and make moving code around a bit easier... They still ain't got no alibi... they're ugly.
+
+```js
+// Bad
+const foo = {
+  name: 'Joe',
+  age: 'Shmo',
+}
+
+// Good
+const foo = {
+  name: 'Joe',
+  age: 'Shmo'
+}
+
+```
+
 ### Never start a statement with one of these: `([+-`
 
 Never start a new statement with any of these characters: `([+-`. There is
