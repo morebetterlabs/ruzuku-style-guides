@@ -260,7 +260,7 @@ function User(spec) {
 
     get fullName () {
       return `${me.firstName} ${me.lastName}`
-    },
+    }
   }
 
   return me
@@ -277,7 +277,7 @@ function User({id, firstName, lastName, age}) {
 
     get fullName () {
       return `${me.firstName} ${me.lastName}`
-    },
+    }
   }
 
   return me
