@@ -2727,20 +2727,22 @@ no parameters.
   Follow the law of demeter.  Having to use try is often a sign that you are breaking the law.
 
   Here is a list of the way you should be calling methods in classes
-  ** Your method can call other methods in its class directly.
-  ** Your method can call methods on its own fields directly (but not on the fields’ fields).
-  ** When your method takes parameters, your method can call methods on those parameters directly.
-  ** When your method creates local objects, that method can call methods on the local objects.
+  ..1 Your method can call other methods in its class directly.
+  ..2 Your method can call methods on its own fields directly (but not on the fields’ fields).
+  ..3 When your method takes parameters, your method can call methods on those parameters directly.
+  ..4 When your method creates local objects, that method can call methods on the local objects.
 
   [Demeter: It’s not just a good idea. It’s the law.](http://devblog.avdi.org/2011/07/05/demeter-its-not-just-a-good-idea-its-the-law/)
+
 <sup>[[link](#law-of-demeter)]</sup>
 
 * <a name='case-statements-are-complex'></a>
   Case statements are a sign that your class is too complex. A hash is often a better alternative.
   The problems with case statements are well covered online.
-  [Refactoring Notes](http://ghendry.net/refactor.html)
-  [Switch Statement Smell](http://c2.com/cgi/wiki?SwitchStatementsSmell)
-  [Refactoring: Replace Conditional with Polymorphism](https://robots.thoughtbot.com/refactoring-replace-conditional-with-polymorphism)
+  ..* [Refactoring Notes](http://ghendry.net/refactor.html)
+  ..* [Switch Statement Smell](http://c2.com/cgi/wiki?SwitchStatementsSmell)
+  ..* [Refactoring: Replace Conditional with Polymorphism](https://robots.thoughtbot.com/refactoring-replace-conditional-with-polymorphism)
+
 <sup>[[link](#case-statements-are-complex)]</sup>
 
 ## Exceptions
