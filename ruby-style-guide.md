@@ -2232,13 +2232,13 @@ no parameters.
     # protected and private methods are grouped near the end
     protected
 
-    def some_protected_method
-    end
+      def some_protected_method
+      end
 
     private
 
-    def some_private_method
-    end
+      def some_private_method
+      end
   end
   ```
 
