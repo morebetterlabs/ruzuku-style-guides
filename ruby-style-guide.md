@@ -8,6 +8,7 @@
 * [Comments](#comments)
   * [Comment Annotations](#comment-annotations)
 * [Classes & Modules](#classes--modules)
+* [Object Oriented Design](#object-oriented-design)
 * [Exceptions](#exceptions)
 * [Collections](#collections)
 * [Strings](#strings)
@@ -2667,6 +2668,80 @@ no parameters.
     include Mononymous
   end
   ```
+
+## Object Oriented Design
+  Practice using the following rules when writing code. Although
+  they are often harsh and difficult to follow, they do an excellent
+  job of telling you when single responsibility is breaking down.
+  These rules are take from a discussion on the ruby rogues podcast.
+  A discussion of the rules can be found
+  [here](https://robots.thoughtbot.com/sandi-metz-rules-for-developers).
+* <a name='small-classes'></a>
+  Classes should not be larger than 100 lines
+<sup>[[link](#small-classes)]</sup>
+
+* <a name='small-methods'></a>
+  Methods should be 5 lines or less. Spaces don't count.
+  ```Ruby
+
+  # bad
+  def some_method(y)
+    x = ''
+    if y > 7
+      x << some_text
+    end
+
+    if y % 4
+      x << some_text
+    end
+
+    if x.length > 8
+      return x
+    else
+      return 'too short'
+    end
+  end
+
+  # good - break into smaller methods
+  def some_method(y)
+    if (text = build_text(y)).length > 8
+      return text
+    else
+      return 'too short'
+    end
+  end
+
+  def build_text(y)
+    x = ''
+    x << if y > 7
+    x << some_text if y % 4
+    return x
+  end
+  ```
+<sup>[[link](#small-methods)]</sup>
+* <a name='few-parameters'></a>
+  Pass no more than four parameters into a method. Hash options are parameters.
+<sup>[[link](#few-parameters)]</sup>
+
+* <a name='law-of-demeter'></a>
+  Follow the law of demeter.  Having to use try is often a sign that you are breaking the law.
+
+  Here is a list of the way you should be calling methods in classes
+  ** Your method can call other methods in its class directly.
+  ** Your method can call methods on its own fields directly (but not on the fields’ fields).
+  ** When your method takes parameters, your method can call methods on those parameters directly.
+  ** When your method creates local objects, that method can call methods on the local objects.
+
+  [Demeter: It’s not just a good idea. It’s the law.](http://devblog.avdi.org/2011/07/05/demeter-its-not-just-a-good-idea-its-the-law/)
+<sup>[[link](#law-of-demeter)]</sup>
+
+* <a name='case-statements-are-complex'></a>
+  Case statements are a sign that your class is too complex. A hash is often a better alternative.
+  The problems with case statements are well covered online.
+  [Refactoring Notes](http://ghendry.net/refactor.html)
+  [Switch Statement Smell](http://c2.com/cgi/wiki?SwitchStatementsSmell)
+  [Refactoring: Replace Conditional with Polymorphism](https://robots.thoughtbot.com/refactoring-replace-conditional-with-polymorphism)
+<sup>[[link](#case-statements-are-complex)]</sup>
 
 ## Exceptions
 
