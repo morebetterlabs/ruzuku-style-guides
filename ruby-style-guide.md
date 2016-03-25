@@ -2739,9 +2739,9 @@ no parameters.
 * <a name='case-statements-are-complex'></a>
   Case statements are a sign that your class is too complex. A hash is often a better alternative.
   The problems with case statements are well covered online.
-  ..* [Refactoring Notes](http://ghendry.net/refactor.html)
-  ..* [Switch Statement Smell](http://c2.com/cgi/wiki?SwitchStatementsSmell)
-  ..* [Refactoring: Replace Conditional with Polymorphism](https://robots.thoughtbot.com/refactoring-replace-conditional-with-polymorphism)
+  * [Refactoring Notes](http://ghendry.net/refactor.html)
+  * [Switch Statement Smell](http://c2.com/cgi/wiki?SwitchStatementsSmell)
+  * [Refactoring: Replace Conditional with Polymorphism](https://robots.thoughtbot.com/refactoring-replace-conditional-with-polymorphism)
 
 <sup>[[link](#case-statements-are-complex)]</sup>
 
