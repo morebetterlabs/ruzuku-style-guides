@@ -2724,7 +2724,7 @@ no parameters.
 <sup>[[link](#few-parameters)]</sup>
 
 * <a name='law-of-demeter'></a>
-  Follow the law of demeter.  Having to use try is often a sign that you are breaking the law.
+  Follow the law of demeter.  Having to use try(:method) is often a sign that you are breaking the law.
 
   Here is a list of the way you should be calling methods in classes
   1. Your method can call other methods in its class directly.
