@@ -3032,17 +3032,16 @@ resource cleanup when possible.
   ```
 
 * <a name="percent-i"></a>
-  Prefer `%i` to the literal array syntax when you need an array of symbols
-  (and you don't need to maintain Ruby 1.9 compatibility). Apply this rule only
-  to arrays with two or more elements.
+  Prefer the literal array syntax to `%i` when you need an array of symbols. It makes
+  it clear that the array is an array of symbols.
 <sup>[[link](#percent-i)]</sup>
 
   ```Ruby
-  # bad
-  STATES = [:draft, :open, :closed]
+  # ok
+  STATES = %i(draft open closed)
 
   # good
-  STATES = %i(draft open closed)
+  STATES = [:draft, :open, :closed]
   ```
 
 * <a name="no-trailing-array-commas"></a>
