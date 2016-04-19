@@ -46,23 +46,8 @@ An example for a `user-widget`:
     height: 2em;
   }
 
-// Good
-.user-widget {
-  border: 1px solid #CCC;
-  padding: 1em;
-}
 
-  .user-widget-name {
-    display: block;
-    opacity: 0.5;
-  }
-
-  .user-widget-pic {
-    width: 2em;
-    height: 2em;
-  }
-
-// Also fine to use BEM:
+// Use BEM:
 .user-widget {
   border: 1px solid #CCC;
   padding: 1em;
